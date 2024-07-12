@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "esModuleInterop": true,
+        "strict": true,
+        // 配列へのインデックスアクセスがT | undefinedに
+        "noUncheckedIndexedAccess": true,
+        // switchでのfallthrough禁止
+        "noFallthroughCasesInSwitch": true,
+        // ファイル名の大文字小文字を区別
+        "forceConsistentCasingInFileNames": true,
+        // d.tsのチェックをスキップ
+        "skipLibCheck": true,
+        // overrideキーワードを強制
+        "noImplicitOverride": true,
+        // { foo?:string }にたいして { foo:undefined }を受け入れない
+        "exactOptionalPropertyTypes": true,
+    }
+}

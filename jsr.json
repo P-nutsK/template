@@ -1,0 +1,13 @@
+{
+    "$schema": "https://jsr.io/schema/config-file.v1.json",
+    "name": "@pnsk/template",
+    "version": "0.1.0",
+    "exports": "./mod.ts",
+    "publish": {
+        "include": [
+            "*.ts",
+            "README.md",
+            "package.json"
+        ]
+    }
+}
