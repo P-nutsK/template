@@ -26,7 +26,7 @@
  *   age:18,
  *   gender:1,
  *   role:"admin",
- *   isPemium:true,
+ *   isPremium:true,
  *   logs:[]
  * })
  * ```
@@ -60,7 +60,7 @@
  *   age:18,
  *   gender:1,
  *   role:"admin",
- *   isPemium:true,
+ *   isPremium:true,
  *   logs:[]
  * })
  * ```
@@ -109,7 +109,7 @@ export class Template<T extends Placeholder[]> {
 				new_strings.push(str);
 			}
 		}
-		console.log(new_strings, new_args);
+		// console.log(new_strings, new_args);
 		return new Template(new_strings, new_args);
 	}
 	/**
@@ -138,10 +138,10 @@ export class Template<T extends Placeholder[]> {
 						? placeholder.compile(args[i])
 						: (args[i] as StringLike | (null | undefined)) ??
 							placeholder.default;
-				if (placeholderValue) {
+				if (placeholderValue != null) {
 					result += placeholderValue.toString();
 				} else {
-					throw new Error("プレースホルダーに指定されてる値がなんかやばいです");
+					throw new Error("Placeholder value missing");
 				}
 			}
 		}
@@ -219,7 +219,7 @@ export class Template<T extends Placeholder[]> {
 		this: void,
 		defaultValue?: T | undefined,
 	): Prim<T, boolean> {
-		if (defaultValue) {
+		if (defaultValue != null) {
 			return { kind: "primitive", default: defaultValue };
 		}
 		return { kind: "primitive", default: null };
